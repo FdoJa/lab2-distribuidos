@@ -1,0 +1,20 @@
+syntax = "proto3";
+option go_package = "github.com/FdoJa/ONU/proto";
+package grpc;
+
+service ONU {
+  rpc ConsultarNombres (Consulta) returns (RespuestaNombres);
+}
+
+message Consulta {
+  string estado = 1;
+}
+
+message RespuestaNombres {
+  repeated Nombre nombres = 1;
+}
+
+message Nombre {
+  string nombre = 1;
+  string apellido = 2;
+}

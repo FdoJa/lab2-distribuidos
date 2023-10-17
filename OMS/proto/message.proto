@@ -1,0 +1,49 @@
+syntax = "proto3";
+option go_package = "github.com/FdoJa/OMS/proto";
+package grpc;
+
+service Continents {
+  rpc InformePersona (Informe) returns (RespuestaVacia);
+}
+
+service DataNode {
+  rpc RegistrarNombre (Registro) returns (RespuestaVacia);
+  rpc PedirNombre (Peticion) returns (Nombre);
+}
+
+service ONU {
+  rpc ConsultarNombres (Consulta) returns (RespuestaNombres);
+}
+
+message Informe {
+  string nombre = 1;
+  string apellido = 2;
+  string estado = 3;
+}
+
+message Registro {
+  string id = 1;
+  string nombre = 2;
+  string apellido = 3;
+}
+
+message Peticion {
+  string id = 1;
+}
+
+message Consulta {
+  string estado = 1;
+}
+
+message Nombre {
+  string nombre = 1;
+  string apellido = 2;
+}
+
+message RespuestaNombres {
+  repeated Nombre nombres = 1;
+}
+
+message RespuestaVacia {
+  
+}

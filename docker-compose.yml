@@ -1,0 +1,32 @@
+version: '3'
+services:
+  continents:
+    container_name: continents-container
+    build:
+      context: ./continents
+    ports:
+      - "50051:50051"
+  oms:
+    container_name: oms-container
+    build:
+      context: ./OMS 
+    ports:
+      - "50052:50052"
+  datanode1:
+    container_name: datanode1-container
+    build:
+      context: ./DataNode1
+    ports:
+      - "50053:50053"
+  datanode2:
+    container_name: datanode2-container
+    build:
+      context: ./DataNode2
+    ports:
+      - "50054:50054"
+  onu:
+    container_name: onu-container
+    build:
+      context: ./ONU
+    ports:
+      - "50055:50055"

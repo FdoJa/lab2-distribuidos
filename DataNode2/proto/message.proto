@@ -1,0 +1,26 @@
+syntax = "proto3";
+option go_package = "github.com/FdoJa/DataNode2/proto";
+package grpc;
+
+service DataNode {
+    rpc RegistrarNombre (Registro) returns (RespuestaVacia);
+    rpc PedirNombre (Peticion) returns (Nombre);
+  }
+
+message Registro {
+    string id = 1;
+    string nombre = 2;
+    string apellido = 3;
+}
+  
+message Peticion {
+    string id = 1;
+}
+  
+message Nombre {
+    string nombre = 1;
+    string apellido = 2;
+}
+  
+message RespuestaVacia {
+}

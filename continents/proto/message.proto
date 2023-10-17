@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "github.com/FdoJa/distribuidos-lab2/proto";
+package grpc;
+
+service Continents {
+  rpc InformePersona (Informe) returns (RespuestaVacia);
+}
+
+message Informe {
+  string nombre = 1;
+  string apellido = 2;
+  string estado = 3;
+}
+
+message RespuestaVacia {
+  
+}
